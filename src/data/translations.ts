@@ -8,7 +8,7 @@ export const translations = {
       switch: 'EN'
     },
     hero: {
-      badge: 'AI 艺术与视频提示词学院',
+      badge: 'AI绘画与视频提示词平台',
       title1: '看见',
       title2: '提示词',
       title3: '的力量',
@@ -72,7 +72,7 @@ export const translations = {
       switch: '中文'
     },
     hero: {
-      badge: 'AI Art & Video Prompt Academy',
+      badge: 'AI Painting & Video Prompt Hub',
       title1: 'See the',
       title2: 'Power',
       title3: 'of Prompts',

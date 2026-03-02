@@ -104,6 +104,17 @@ export default function Gallery() {
 
   const categories = mode === 'painting' ? paintingCategories : videoCategories;
 
+  const getResolutionFilter = (itemId: string) => {
+    if (selectedCategory.id !== 'resolution') return '';
+    switch (itemId) {
+      case 'res-2k': return 'blur(1.5px) contrast(0.9) saturate(0.9)';
+      case 'res-4k': return 'contrast(1) saturate(1)';
+      case 'res-8k': return 'contrast(1.1) saturate(1.1) brightness(1.05) sharp-filter';
+      case 'res-16k': return 'contrast(1.2) saturate(1.2) brightness(1.1) shadow-[0_0_20px_rgba(255,255,255,0.3)]';
+      default: return '';
+    }
+  };
+
   return (
     <section id="gallery" className="py-12 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,13 +223,17 @@ export default function Gallery() {
                   <div className="flex flex-col md:flex-row">
                     {/* Left: Large Image View */}
                     <div className="w-full md:w-1/2 p-8">
-                      <div className="relative aspect-square rounded-[32px] overflow-hidden bg-slate-50 shadow-inner">
+                      <div className="relative aspect-video rounded-3xl overflow-hidden bg-slate-50 border border-slate-100/50 shadow-2xl">
                         <img 
                           src={selectedItem.image} 
                           alt={lang === 'en' ? selectedItem.nameEn || selectedItem.name : selectedItem.name} 
                           className="w-full h-full object-cover"
+                          style={{ 
+                            filter: getResolutionFilter(selectedItem.id).includes('sharp') 
+                              ? 'contrast(1.1) saturate(1.1) brightness(1.05)' 
+                              : getResolutionFilter(selectedItem.id) 
+                          }}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                       </div>
                     </div>
 
@@ -296,7 +311,12 @@ export default function Gallery() {
                         <img
                           src={item.image}
                           alt={lang === 'en' ? item.nameEn || item.name : item.name}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                          style={{ 
+                            filter: getResolutionFilter(item.id).includes('sharp') 
+                              ? 'contrast(1.1) saturate(1.1) brightness(1.05)' 
+                              : getResolutionFilter(item.id) 
+                          }}
                         />
                       </div>
                       

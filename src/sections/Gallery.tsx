@@ -107,10 +107,10 @@ export default function Gallery() {
   const getResolutionFilter = (itemId: string) => {
     if (selectedCategory.id !== 'resolution') return '';
     switch (itemId) {
-      case 'res-2k': return 'blur(1.5px) contrast(0.9) saturate(0.9)';
-      case 'res-4k': return 'contrast(1) saturate(1)';
-      case 'res-8k': return 'contrast(1.1) saturate(1.1) brightness(1.05) sharp-filter';
-      case 'res-16k': return 'contrast(1.2) saturate(1.2) brightness(1.1) shadow-[0_0_20px_rgba(255,255,255,0.3)]';
+      case 'res-2k': return 'contrast(1) saturate(1)';
+      case 'res-4k': return 'contrast(1.05) saturate(1.05) brightness(1.02)';
+      case 'res-8k': return 'contrast(1.1) saturate(1.1) brightness(1.05)';
+      case 'res-16k': return 'contrast(1.15) saturate(1.15) brightness(1.08) drop-shadow(0 0 8px rgba(255,255,255,0.2))';
       default: return '';
     }
   };
@@ -227,13 +227,9 @@ export default function Gallery() {
                         <img 
                           src={selectedItem.image} 
                           alt={lang === 'en' ? selectedItem.nameEn || selectedItem.name : selectedItem.name} 
-                          className="w-full h-full object-cover"
-                          style={{ 
-                            filter: getResolutionFilter(selectedItem.id).includes('sharp') 
-                              ? 'contrast(1.1) saturate(1.1) brightness(1.05)' 
-                              : getResolutionFilter(selectedItem.id) 
-                          }}
-                        />
+                            className="w-full h-full object-cover"
+                            style={{ filter: getResolutionFilter(selectedItem.id) }}
+                          />
                       </div>
                     </div>
 
@@ -312,11 +308,7 @@ export default function Gallery() {
                           src={item.image}
                           alt={lang === 'en' ? item.nameEn || item.name : item.name}
                           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                          style={{ 
-                            filter: getResolutionFilter(item.id).includes('sharp') 
-                              ? 'contrast(1.1) saturate(1.1) brightness(1.05)' 
-                              : getResolutionFilter(item.id) 
-                          }}
+                          style={{ filter: getResolutionFilter(item.id) }}
                         />
                       </div>
                       

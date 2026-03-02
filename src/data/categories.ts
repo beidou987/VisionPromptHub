@@ -341,10 +341,10 @@ export const paintingCategories: Category[] = [
     description: '画面清晰度与细节',
     descriptionEn: 'Image clarity and details',
     items: [
-      { id: 'res-2k', name: '2K高清', nameEn: '2K HD', desc: '主流清晰度', descEn: 'Standard high definition', image: '', prompt: '2K resolution, high definition, sharp details' },
-      { id: 'res-4k', name: '4K超清', nameEn: '4K Ultra HD', desc: '极高清晰度，细节丰富', descEn: 'Cinematic hyper-realistic detail', image: '', prompt: '4K resolution, ultra high definition, cinematic detail, hyper-realistic' },
-      { id: 'res-8k', name: '8K超高清', nameEn: '8K Hyper HD', desc: '顶级画质，纤毫毕现', descEn: 'Extreme clarity and masterpiece', image: '', prompt: '8K resolution, hyper-detailed, masterpiece quality, extreme clarity' },
-      { id: 'res-16k', name: '16K极清', nameEn: '16K Ultimate HD', desc: '未来的清晰度，无与伦比', descEn: 'Beyond reality and ultimate detail', image: '', prompt: '16K resolution, ultimate detail, beyond reality, incredible sharpness' },
+      { id: 'res-2k', name: '2K高清', nameEn: '2K HD', desc: '主流清晰度', descEn: 'Standard high definition', image: '/images/details/hyperrealistic.jpg', prompt: '2K resolution, high definition, sharp details' },
+      { id: 'res-4k', name: '4K超清', nameEn: '4K Ultra HD', desc: '极高清晰度，细节丰富', descEn: 'Cinematic hyper-realistic detail', image: '/images/details/hyperrealistic.jpg', prompt: '4K resolution, ultra high definition, cinematic detail, hyper-realistic' },
+      { id: 'res-8k', name: '8K超高清', nameEn: '8K Hyper HD', desc: '顶级画质，纤毫毕现', descEn: 'Extreme clarity and masterpiece', image: '/images/details/hyperrealistic.jpg', prompt: '8K resolution, hyper-detailed, masterpiece quality, extreme clarity' },
+      { id: 'res-16k', name: '16K极清', nameEn: '16K Ultimate HD', desc: '未来的清晰度，无与伦比', descEn: 'Beyond reality and ultimate detail', image: '/images/details/hyperrealistic.jpg', prompt: '16K resolution, ultimate detail, beyond reality, incredible sharpness' },
     ]
   },
 ];

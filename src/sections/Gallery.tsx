@@ -20,8 +20,6 @@ import {
   Aperture,
   Wind,
   Sparkles,
-  Move,
-  Monitor,
   ChevronLeft,
   Copy,
   Check

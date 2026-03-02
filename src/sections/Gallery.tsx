@@ -105,43 +105,43 @@ export default function Gallery() {
   const categories = mode === 'painting' ? paintingCategories : videoCategories;
 
   return (
-    <section id="gallery" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="gallery" className="py-12 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mode Switcher Tabs - Hide when in detail view for cleaner look, or keep for nav */}
         {!selectedItem && (
-          <div className="flex justify-center mb-16">
-            <div className="inline-flex p-1.5 bg-slate-100 rounded-2xl">
+          <div className="flex justify-center mb-10 md:mb-16">
+            <div className="inline-flex p-1 bg-slate-100 rounded-xl md:rounded-2xl">
               <button
                 onClick={() => setMode('painting')}
-                className={`flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-black transition-all ${
+                className={`flex items-center gap-2 px-4 md:px-8 py-2 md:py-3 rounded-lg md:rounded-xl text-xs md:text-sm font-black transition-all ${
                   mode === 'painting' 
                     ? 'bg-white text-orange-500 shadow-sm' 
                     : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
-                <Palette className="w-4 h-4" />
+                <Palette className="w-3.5 h-3.5 md:w-4 h-4" />
                 {t.modePainting}
               </button>
               <button
                 onClick={() => setMode('video')}
-                className={`flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-black transition-all ${
+                className={`flex items-center gap-2 px-4 md:px-8 py-2 md:py-3 rounded-lg md:rounded-xl text-xs md:text-sm font-black transition-all ${
                   mode === 'video' 
                     ? 'bg-white text-orange-500 shadow-sm' 
                     : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
-                <VideoIcon className="w-4 h-4" />
+                <VideoIcon className="w-3.5 h-3.5 md:w-4 h-4" />
                 {t.modeVideo}
               </button>
             </div>
           </div>
         )}
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
           {/* Sidebar Navigation - Styled like the screenshot */}
           {!selectedItem && (
-            <aside className="w-full lg:w-72 flex-shrink-0">
-              <div className="sticky top-24 bg-white border border-slate-100 rounded-3xl shadow-sm overflow-hidden">
+            <aside className="w-full lg:w-72 flex-shrink-0 overflow-x-auto lg:overflow-visible">
+              <div className="lg:sticky lg:top-24 bg-white border border-slate-100 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden min-w-[300px] lg:min-w-0">
                 <div className="p-6 pb-2">
                   <h3 className="text-lg font-black text-slate-900">
                     {mode === 'painting' ? t.catPainting : t.catVideo}
